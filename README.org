@@ -26,3 +26,11 @@ ultrasonidos y un altavoz en la plataforma Raspberry Pi.
 
 Faltaría conectar el altavoz externo a la salida de audio.
 
+* Instalación y uso
+Para poder ejecutar el código se debe instalar la libreria PyGame,
+para ello, se usa el siguiente comando:
+#+BEGIN_SRC shell
+ pip install -r requirements.txt
+#+END_SRC
+
+
