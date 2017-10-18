@@ -1,0 +1,29 @@
+# -*- mode:org; ispell-local-dictionary: "spanish" -*-
+#+TITLE:     Codigo para alarma con Raspberry Pi
+#+AUTHOR:    Almira Molla, Alejandro
+#+EMAIL:     aalmiramolla@gmail.com
+#+LANGUAGE:  es
+#+STARTUP: content
+
+* Introduccion
+
+En este proyecto se trata de hacer una alarma con un sensor de
+ultrasonidos y un altavoz en la plataforma Raspberry Pi.
+
+* Materiales
+
+- Raspberry Pi
+- Sensor de ultrasonidos HC-SR04
+- Resistencias: 330Ω y 470Ω
+- Cables
+- Protoboard
+- Altavoz externo (Jack 3.5)
+
+* Esquema
+
+#+CAPTION: (Credit: [[https://tutorials-raspberrypi.com/raspberry-pi-ultrasonic-sensor-hc-sr04/]])
+#+NAME:   fig:wiring
+[[./wiring.png]]
+
+
+
