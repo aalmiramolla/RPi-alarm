@@ -1,5 +1,5 @@
 # -*- mode:org; ispell-local-dictionary: "spanish" -*-
-#+TITLE:     Codigo para alarma con Raspberry Pi
+#+TITLE:     Alarma con Raspberry Pi
 #+AUTHOR:    Almira Molla, Alejandro
 #+EMAIL:     aalmiramolla@gmail.com
 #+LANGUAGE:  es
