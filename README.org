@@ -29,7 +29,7 @@ Faltaria conectar el altavoz externo a la salida de audio.
 * Codigo
 Para exportar el codigo hay que exportarlo con Emacs Org-Mode presionando las teclas =C-c C-v t=
 
-Importamos las librerias GPIO y time
+Importamos las librerias GPIO, time y pygame, ademas inicializamos PyGame
 #+BEGIN_SRC python :eval never :tangle "./alarma.py"
   #!/usr/bin/env python
   # coding: utf-8
@@ -37,6 +37,9 @@ Importamos las librerias GPIO y time
   #Libraries
   import RPi.GPIO as GPIO
   import time
+  import pygame
+
+  pygame.init()
 #+END_SRC
 Se setea la Raspberry para que coja los pines en modo BCM y se setean
 la posicion y la direccion de los pines del sensor
@@ -91,11 +94,12 @@ Creamos un bucle infinito en el que se comprueba la distancia del
 objeto al sensor, si esta distancia es menor a 5 cm, hacemos sonar la
 alarma.
  #+BEGIN_SRC python :eval never :tangle "./alarma.py"
-      if __name__ == '__main__':
-          while True:
-              if distance() < 5: # cm
-                  # play sound
-                  pass
-              time.sleep(0.5)
+   if __name__ == '__main__':
+       while True:
+           if distance() < 5: # cm
+               # play sound
+               pygame.mixer.music.load('r2-d2.wav')
+               pygame.mixer.music.play()
+           time.sleep(0.5)
 
  #+END_SRC
