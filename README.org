@@ -62,27 +62,40 @@ rebota.
   def distance():
       # set Trigger to HIGH
       GPIO.output(GPIO_TRIGGER, True)
- 
+
       # set Trigger after 0.01ms to LOW
       time.sleep(0.00001)
       GPIO.output(GPIO_TRIGGER, False)
- 
-      StartTime = time.time()
-      StopTime = time.time()
- 
+
+      start_time = time.time()
+      stop_time = time.time()
+
       # save StartTime
       while GPIO.input(GPIO_ECHO) == 0:
-          StartTime = time.time()
- 
+          start_time = time.time()
+
       # save time of arrival
       while GPIO.input(GPIO_ECHO) == 1:
-          StopTime = time.time()
- 
+          stop_time = time.time()
+
       # time difference between start and arrival
-      TimeElapsed = StopTime - StartTime
+      time_elapsed = stop_time - start_time
       # multiply with the sonic speed (34300 cm/s)
       # and divide by 2, because there and back
-      distance = (TimeElapsed * 34300) / 2
- 
+      distance = (time_elapsed * 34300) / 2
+
       return distance
+ #+END_SRC
+
+Creamos un bucle infinito en el que se comprueba la distancia del
+objeto al sensor, si esta distancia es menor a 5 cm, hacemos sonar la
+alarma.
+ #+BEGIN_SRC python :eval never :tangle "./alarma.py"
+      if __name__ == '__main__':
+          while True:
+              if distance() < 5: # cm
+                  # play sound
+                  pass
+              time.sleep(0.5)
+
  #+END_SRC
