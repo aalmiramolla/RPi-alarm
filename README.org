@@ -24,6 +24,7 @@ ultrasonidos y un altavoz en la plataforma Raspberry Pi.
 #+CAPTION: (Credit: [[https://tutorials-raspberrypi.com/raspberry-pi-ultrasonic-sensor-hc-sr04/]])
 #+NAME:   fig:wiring
 [[./wiring.png]]
+
 (Credit: [[https://tutorials-raspberrypi.com/raspberry-pi-ultrasonic-sensor-hc-sr04/]])
 
 Faltaria conectar el altavoz externo a la salida de audio.
