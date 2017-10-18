@@ -5,7 +5,7 @@
 #+LANGUAGE:  es
 #+STARTUP: content
 
-* Introduccion
+* Introducción
 En este proyecto se trata de hacer una alarma con un sensor de
 ultrasonidos y un altavoz en la plataforma Raspberry Pi.
 
@@ -24,12 +24,12 @@ ultrasonidos y un altavoz en la plataforma Raspberry Pi.
 
 (Credit: [[https://tutorials-raspberrypi.com/raspberry-pi-ultrasonic-sensor-hc-sr04/]])
 
-Faltaria conectar el altavoz externo a la salida de audio.
+Faltaría conectar el altavoz externo a la salida de audio.
 
-* Codigo
-Para exportar el codigo hay que exportarlo con Emacs Org-Mode presionando las teclas =C-c C-v t=
+* Código
+Para exportar el código hay que exportarlo con Emacs Org-Mode presionando las teclas =C-c C-v t=
 
-Importamos las librerias GPIO, time y pygame, ademas inicializamos PyGame
+Importamos las librerías GPIO, time y pygame, además inicializamos PyGame
 #+BEGIN_SRC python :eval never :tangle "./alarma.py"
   #!/usr/bin/env python
   # coding: utf-8
@@ -42,7 +42,7 @@ Importamos las librerias GPIO, time y pygame, ademas inicializamos PyGame
   pygame.init()
 #+END_SRC
 Se setea la Raspberry para que coja los pines en modo BCM y se setean
-la posicion y la direccion de los pines del sensor
+la posición y la dirección de los pines del sensor
 #+BEGIN_SRC python :eval never :tangle "./alarma.py"
   #GPIO Mode (BOARD / BCM)
   GPIO.setmode(GPIO.BCM)
@@ -55,9 +55,9 @@ la posicion y la direccion de los pines del sensor
   GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
   GPIO.setup(GPIO_ECHO, GPIO.IN)
  #+END_SRC
-Se crea un metodo para calcular la distancia en cm.
+Se crea un método para calcular la distancia en cm.
 
-La distancia es el tiempo que tarda en enviar la senyal, rebotar y
+La distancia es el tiempo que tarda en enviar la señal, rebotar y
 volver al sensor. Se divide entre dos porque solo interesa desde el
 rebote hasta que llega, o al contrario, desde que sale hasta que
 rebota.
